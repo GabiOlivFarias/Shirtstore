@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th> Nome </th>
+      <th> Preço </th>
+      <th> Quantidade</th>
+      <th> Descrição </th>
+  </tr>
+    <thead>
+
+
+  <tbody>
+    <% @todos.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      <td><%= product.description %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

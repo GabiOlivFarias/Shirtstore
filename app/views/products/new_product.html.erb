@@ -1,0 +1,35 @@
+<%= form_for Product.new do |f|%>
+<%# acima cria pra mim a url product e o metodo post %>
+<%# <form action="/products" method="post"> %>
+<%# dentro do form coloco uma action pra ele mandar os dados do meu formulario para mina tabela %>
+<%# rails o modelo no singular %>
+<%# metodo do http enviar para criar é o post %>
+<form>
+
+<div class="form-group">
+  <%= f.label :name %>
+  <%# cria um campo no form bonito em bold e clicando vai pro campo %>
+  <%= f.text_field :name, class: "form-control"%>
+  <%# <input type="text" name="product[name]"/>  simplificando isso acima com ruby%>
+</div>
+<div class="form-group">
+  <%= f.label :description %>
+  <%# <input name="product[description]"></textarea>%>
+  <%= f.text_area :description, class: "form-control", rows: 4 %>
+</div>
+<div class="form-inline">
+  <div class="form-group">
+    <%= f.label :quantity %>
+    <%# <input type="number" name="product[quantity]"/> %>
+    <%= f.number_field :quantity, step: 1, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %>
+    <%# <input type="number" name="product[price]" step="0.01"/> %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+  <%= f.submit "Cadastrar produto", class: "btn btn-primary"%>
+</div>
+  <%# <button type="submit">Criar </button> %>
+<% end %>
+</form>
